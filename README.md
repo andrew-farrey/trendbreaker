@@ -54,6 +54,10 @@ if (!require(remotes)) {
   install.packages("remotes")
 }
 remotes::install_github("reconhub/trendbreaker")
+
+This forked version can be installed with:
+
+remotes::install_github("andrew-farrey/trendbreaker")
 ```
 
 The best place to start for using this package is to read the
