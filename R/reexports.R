@@ -17,7 +17,7 @@ trending::glm_model
 trending::glm_nb_model
 
 #' @title Interface for model construction
-#' @importFrom trending brms_model
+#' @importFrom trending brm_model
 #' @export
 #' @name brm_model
 trending::brm_model
