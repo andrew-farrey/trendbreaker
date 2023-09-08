@@ -29,7 +29,7 @@
 #'
 #' @aliases trendbreaker-accessors trendbreaker-class
 #'
-#' @importFrom trending get_model
+#' @importFrom trending get_fitted_model
 #' @export
 #' @rdname trendbreaker-accessors
 #' @aliases get_model.trendbreaker
@@ -43,7 +43,7 @@ get_model.trendbreaker <- function(x, ...) {
 #' @rdname trendbreaker-accessors
 #' @aliases get_formula.trendbreaker
 get_formula.trendbreaker <- function(x, ...) {
-  formula(get_model(x))
+  formula(get_fitted_model(x))
 }
 
 
