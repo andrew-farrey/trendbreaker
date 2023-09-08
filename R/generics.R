@@ -17,6 +17,11 @@ get_k <- function(x, ...) {
   UseMethod("get_k", x)
 }
 
+#' @export
+#' @rdname trendbreaker-generics
+get_model <- function(x, ...) {
+  UseMethod("get_model", x)
+}
 
 #' @export
 #' @rdname trendbreaker-generics
