@@ -19,6 +19,8 @@ temporal trends of a single response variable. It implements the
 for **E**pidemmics (ASMODEE), an algorithm originally designed for
 detecting changes in COVID-19 case incidence.
 
+I've edited this forked version of trendbreaker in an attempt to fix it myself. - Andrew Farrey
+
 ASMODEE proceeds by:
 
 1.  defining a training set excluding the last *k* data points
@@ -53,7 +55,9 @@ The development version can be installed from
 if (!require(remotes)) {
   install.packages("remotes")
 }
-remotes::install_github("reconhub/trendbreaker")
+
+# Original Version: Broken
+#remotes::install_github("reconhub/trendbreaker")
 
 This forked version can be installed with:
 
