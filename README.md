@@ -19,7 +19,7 @@ temporal trends of a single response variable. It implements the
 for **E**pidemmics (ASMODEE), an algorithm originally designed for
 detecting changes in COVID-19 case incidence.
 
-I've edited this forked version of trendbreaker in an attempt to fix it myself. - Andrew Farrey
+Note: I've edited this forked version in an attempt to fix it myself.
 
 ASMODEE proceeds by:
 
