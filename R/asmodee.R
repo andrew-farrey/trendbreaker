@@ -202,7 +202,7 @@ asmodee.data.frame <- function(data, models, date_index, alpha = 0.05, k = 7,
   
  if (method == "evaluate_aic") {
     model_results <- do.call(trendeval::evaluate_aic, method_args)
-  } {
+  } else {
     model_results <- do.call(trendeval::evaluate_resampling, method_args)
   }
   
