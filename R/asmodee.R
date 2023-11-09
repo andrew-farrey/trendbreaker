@@ -142,6 +142,8 @@ asmodee.data.frame <- function(data, models, date_index, alpha = 0.05, k = 7,
   idx <- tidyselect::eval_select(date_index, data)
   date_index <- names(data)[idx]
   dates <- data[[date_index]]
+  # Pull method out 
+  method_select <- rlang::enquo(method)
 
   # Ensure k is a wholenumber of "reasonable" size
   k <- int_cast(k) # this will error if cannot cast to integer
@@ -196,13 +198,13 @@ asmodee.data.frame <- function(data, models, date_index, alpha = 0.05, k = 7,
   # Step 4: evaluate the models
   method_args <- utils::modifyList(
     method_args,
-    list(data = data_train, models = models, method = method),
+    list(data = data_train, models = models),
     keep.null = TRUE
   )
   
- if (method_args[["method"]] == evaluate_aic) {
+ if (method_select == evaluate_aic) {
   model_results <- do.call(trendeval::evaluate_aic, method_args)
-} else if (method_args[["method"]] == evaluate_resampling) {
+} else if (method_select == evaluate_resampling) {
   model_results <- do.call(trendeval::evaluate_resampling, method_args)
 } else {
   stop("Please provide a valid method. Choices are evaluate_aic or evaluate_resampling.")
