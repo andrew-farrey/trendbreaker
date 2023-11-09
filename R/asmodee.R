@@ -199,7 +199,13 @@ asmodee.data.frame <- function(data, models, date_index, alpha = 0.05, k = 7,
     list(data = data_train, models = models, method = method),
     keep.null = TRUE
   )
-  model_results <- do.call(trendeval::evaluate_models, method_args)
+  
+ if (method == "evaluate_aic") {
+    model_results <- do.call(trendeval::evaluate_aic, method_args)
+  } {
+    model_results <- do.call(trendeval::evaluate_resampling, method_args)
+  }
+  
   model_results$model <- NULL   # this is cleaning up from trendeval output
   model_results$data <- NULL    # this is cleaning up from trendeval output
   model_results <- dplyr::rename(
