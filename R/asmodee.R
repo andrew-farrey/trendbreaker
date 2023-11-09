@@ -200,11 +200,13 @@ asmodee.data.frame <- function(data, models, date_index, alpha = 0.05, k = 7,
     keep.null = TRUE
   )
   
- if (method == "evaluate_aic") {
-    model_results <- do.call(trendeval::evaluate_aic, method_args)
-  } else {
-    model_results <- do.call(trendeval::evaluate_resampling, method_args)
-  }
+ if (method_args$method == "evaluate_aic") {
+  model_results <- do.call(trendeval::evaluate_aic, method_args)
+} else if (method_args$method == "evaluate_resampling") {
+  model_results <- do.call(trendeval::evaluate_resampling, method_args)
+} else {
+  stop("Please provide a valid method. The choices are evaluate_aic or evaluate_resampling.")
+}
   
   model_results$model <- NULL   # this is cleaning up from trendeval output
   model_results$data <- NULL    # this is cleaning up from trendeval output
