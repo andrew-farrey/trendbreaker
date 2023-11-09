@@ -143,7 +143,7 @@ asmodee.data.frame <- function(data, models, date_index, alpha = 0.05, k = 7,
   date_index <- names(data)[idx]
   dates <- data[[date_index]]
   # Pull method out 
-  method_select <- rlang::enquo(method)
+  method_select <- method
 
   # Ensure k is a wholenumber of "reasonable" size
   k <- int_cast(k) # this will error if cannot cast to integer
